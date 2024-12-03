@@ -46,7 +46,23 @@ onMounted(async () => {
   }
 });
 
+const submitSurvey = async () => {
+  if (!survey.value) {
+    return;
+  }
 
+  try {
+    const body = survey.value.questions.map((question: Question) => ({
+      questionId: question.id,
+      score: ratings.value[question.id]
+    }));
+
+    await submitRatings(survey.value.id, body);
+    await router.push("/");
+  } catch (error) {
+    console.error("Error submitting survey:", error);
+  }
+};
 </script>
 
 <style scoped>
