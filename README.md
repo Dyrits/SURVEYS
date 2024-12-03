@@ -1,6 +1,6 @@
-# How to...
+# [Case Study: Development of a Simple Survey Tool](./case-study.pdf)
 
-## ...run the project
+## How run the project
 
 1. Clone the repository
 2. Have Docker installed and running
